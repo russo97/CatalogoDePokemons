@@ -1,0 +1,16 @@
+
+html {
+  font-size: 100%;
+}
+
+body {
+  @extend %overflow-hidden;
+  background-color: $baseBGColor2;
+
+  #main {
+    margin: 0 auto;
+    max-width: 1366px;
+    @extend %fullheight, %d-flex;
+    background-color: $baseBGColor;
+  }
+}

@@ -1,0 +1,93 @@
+
+#main-aside {
+  width: 93px;
+  @extend %fullheight;
+  background-color: $baseBGColor2;
+
+  .menu {
+    @extend
+      %fullblock,
+      %overflow-hidden;
+
+    &wrapper {
+      z-index: 1;
+      transition: transform .3s ease-in-out;
+      @extend
+        %fullwidth,
+        %pos-relative;
+  
+      &__item {
+        height: 80px;
+        @extend
+          %fullwidth,
+          %flexcentering;
+
+        &:not(.master) {
+          height: 60px;
+
+          a {
+            @extend
+              %fullblock,
+              %flexcentering;
+
+            img {
+              width: auto;
+              height: 50%;
+            }
+          }
+        }
+  
+        a {
+          width: 46px;
+          height: auto;
+          @extend %d-block;
+  
+          img {
+            @extend %fullblock;
+            transition: transform .3s ease-in-out;
+
+            &:hover {
+              transform: scale(1.1) rotate(-15deg);
+            }
+          }
+        }
+
+        &.flag-active {
+          top: 80px;
+          z-index: -1;
+          height: 68px;
+          @extend
+            %fullwidth,
+            %zero-left,
+            %pos-absolute;
+          transform: translateY(-4px);
+          transition: all .3s ease-in-out;
+
+          &.disabled {
+            opacity: 0;
+          }
+
+          &:after,
+          &:before {
+            content: '';
+            @extend
+              %fullwidth,
+              %zero-left,
+              %pos-absolute;
+            height: calc(50% + 2px);
+          }
+
+          &:before {
+            top: 0;
+            background: transparent url("../images/selectedItem.png") 2px top no-repeat;
+          }
+
+          &:after {
+            bottom: 0;
+            background: transparent url("../images/selectedItem.png") 2px bottom no-repeat;
+          }
+        }
+      }
+    }
+  }
+}

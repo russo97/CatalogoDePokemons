@@ -1,0 +1,108 @@
+
+#main-section {
+  flex: 1;
+  max-width: calc(100% - 93px);
+
+  .maincontainer {
+    padding: 0 20px;
+    @extend %fullblock;
+    
+    &__wrapper {
+      flex-wrap: wrap;
+      scroll-behavior: smooth;
+      -webkit-scroll-behavior: smooth;
+      @extend %fullblock, %justify-content-center;
+      overflow: hidden scroll;
+      
+      &::-webkit-scrollbar {
+        width: .875rem;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #1f1d2b;
+      }
+
+      .pokemoncard {
+        height: auto;
+        margin: 20px;
+        max-width: 120px;
+        @extend %fullwidth;
+        display: inline-block;
+        transition: all .3s ease-in-out;
+
+        &.inevidence {
+          opacity: .2;
+        }
+
+        &__wrapper {
+          &-image {
+            @extend %fullwidth;
+
+            img {
+              @extend %fullwidth;
+            }
+          }
+
+          &-info {
+            @extend %fullwidth;
+            border-collapse: collapse;
+
+            tr {
+              @extend %fullwidth, %d-block;
+
+              .pokename {
+                color: 	#f5f5f5;
+                text-transform: capitalize;
+                @extend %fullwidth, %d-block, %text-align-center;
+
+                h4 {
+                  font: 500 1rem 'Glory', sans-serif;
+                }
+              }
+
+              &.poketype {
+                padding: 10px 0;
+                @extend %justify-content-space-around;
+
+                .pill {
+                  color: #222;
+                  padding: 2px 4px;
+                  border-radius: 4px;
+                  background: #f5f5f5;
+                  font: 500 .8125rem 'Glory', sans-serif;
+                  @extend %d-inline-block, %text-align-center;
+
+                  $typeColors: (
+                    (bug, #f8d5a3),
+                    (ice, #DEF3FD),
+                    (rock, #d5d5d4),
+                    (fire, #FDDFDF),
+                    (steel, #f4f4f4),
+                    (water, #DEF3FD),
+                    (grass, #DEFDE0),
+                    (fairy, #fceaff),
+                    (ground, #f4e7da),
+                    (poison, #98d7a5),
+                    (dragon, #97b3e6),
+                    (flying, #F5F5F5),
+                    (normal, #F5F5F5),
+                    (psychic, #eaeda1),
+                    (fighting, #E6E0D4),
+                    (electric, #FCF7DE)
+                  );
+
+                  @each $type, $background, $color in $typeColors {
+                    &.#{$type} {
+                      background-color: $background;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

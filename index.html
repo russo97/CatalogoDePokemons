@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Wanderson Silva <wandersonsilva768@gmail.com>" />
+      <link rel="shortcut icon" href="assets/images/pokebola.png" type="image/x-icon" />
+    <title>Catálogo de Pokémons | Let's Code</title>
+    <!-- load stylesheet -->
+    <link rel="stylesheet" href="assets/css/main.min.css" />
+    <!-- load scripts -->
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+
+    <main id="main">
+      <aside id="main-aside">
+        <nav class="menu">
+          <ul class="menuwrapper">
+            <li class="menuwrapper__item flag-active disabled">
+              <!-- I'm just going to show you which item is selected, hope to do it well -->
+            </li>
+
+            <li class="menuwrapper__item master">
+              <a href="#main" title="Catálogo de Pokémons">
+                <img src="assets/images/pokebola.png" alt="Pokebola" />
+              </a>
+            </li>
+
+            <li class="menuwrapper__item selected" data-type="fire">
+              <a href="#fire" title="Fogo">
+                <img src="assets/images/fire.png" alt="Fogo" />
+              </a>
+            </li>
+
+            <li class="menuwrapper__item" data-type="grass">
+              <a href="#leaf" title="Planta">
+                <img src="assets/images/leaf.png" alt="Folha de Árvore" />
+              </a>
+            </li>
+
+            <li class="menuwrapper__item" data-type="ghost">
+              <a href="#ghost" title="Fantasma">
+                <img src="assets/images/ghost.png" alt="Fantasma" />
+              </a>
+            </li>
+
+            <li class="menuwrapper__item" data-type="fighting">
+              <a href="#fighting" title="Lutador">
+                <img src="assets/images/fighting.png" alt="Punho com luva" />
+              </a>
+            </li>
+
+            <li class="menuwrapper__item" data-type="dragon">
+              <a href="#dragon" title="Dragão">
+                <img src="assets/images/dragon.png" alt="Dragão" />
+              </a>
+            </li>
+
+            <li class="menuwrapper__item" data-type="water">
+              <a href="#water" title="Água">
+                <img src="assets/images/water.png" alt="Água" />
+              </a>
+            </li>
+
+            <li class="menuwrapper__item" data-type="electric">
+              <a href="#ray" title="Elétrico">
+                <img src="assets/images/ray.png" alt="Raio" />
+              </a>
+            </li>
+
+            <li class="menuwrapper__item" data-type="ice">
+              <a href="#ice" title="Gelo">
+                <img src="assets/images/ice.png" alt="Gelo" />
+              </a>
+            </li>
+
+            <li class="menuwrapper__item" data-type="poison">
+              <a href="#poison" title="Venenoso">
+                <img src="assets/images/poison.png" alt="Pote de veneno" />
+              </a>
+            </li>
+
+            <li class="menuwrapper__item" data-type="ground">
+              <a href="#ground" title="Terrestre">
+                <img src="assets/images/ground.png" alt="Porção de terra" />
+              </a>
+            </li>
+
+            <li class="menuwrapper__item" data-type="flying">
+              <a href="#flying" title="Voador">
+                <img src="assets/images/wings.png" alt="Asas" />
+              </a>
+            </li>
+
+            <li class="menuwrapper__item" data-type="bug">
+              <a href="#bug" title="Inseto">
+                <img src="assets/images/bug.png" alt="Inseto" />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+
+      <section id="main-section">
+        <div class="maincontainer">
+          <div class="maincontainer__wrapper"></div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal share">
+      <div class="sharewrapper">
+        <span class="closer">
+          &#10006;
+        </span>
+
+        <h3 class="sharewrapper__title">
+          Compartilha com teu amigo!
+        </h3>
+
+        <form onsubmit="return false;" class="sharewrapper__form" name="share">
+          <div class="row">
+            <div class="sharewrapper__form-label label">
+              <label for="name">Nome: </label>
+              <input type="name" id="name" />
+            </div>
+  
+            <div class="sharewrapper__form-label label">
+              <label for="mail">E-mail: </label>
+              <input type="email" id="mail" />
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <button type="submit">ENVIAR</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>

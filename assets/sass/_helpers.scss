@@ -1,0 +1,76 @@
+
+$baseBGColor: #252836;
+$baseBGColor2: #1f1d2b;
+
+
+%fullwidth {
+  width: 100%;
+}
+
+%fullheight {
+  height: 100%;
+}
+
+%fullblock {
+  @extend
+    %fullwidth,
+    %fullheight;
+}
+
+%flexcentering {
+  @extend %d-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@each $display in (block, none, flex, grid, inline-block) {
+  %d-#{$display} {
+    display: $display;
+  }
+}
+
+@each $position in (relative, absolute, fixed) {
+  %pos-#{$position} {
+    position: $position;
+  }
+}
+
+@each $direction in (top, right, bottom, left) {
+  %zero-#{$direction} {
+    #{$direction}: 0;
+  }
+}
+
+@each $type in (scroll, hidden, auto, visible) {
+  %overflow-#{$type} {
+    overflow: $type;
+  }
+}
+
+@each $type in (center, space-between, space-around, space-evenly) {
+  %justify-content-#{$type} {
+    @extend %d-flex;
+    justify-content: $type;
+  }
+}
+
+@each $type in (center, flex-start, flex-end, stretch) {
+  %align-items-#{$type} {
+    @extend %d-flex;
+    align-items: $type;
+  }
+}
+
+@each $type in (row, row-reverse, column, column-reverse) {
+  %flex-direction-#{$type} {
+    @extend %d-flex;
+    flex-direction: $type;
+  }
+}
+
+@each $align in (left, center, right, justify) {
+  %text-align-#{$align} {
+    text-align: $align;
+  }
+}
+
